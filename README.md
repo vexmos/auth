@@ -1,5 +1,5 @@
 # VexmosAUTH
-![logo](vexmos.png)
+![logo](transparent.png)
 <br>
 <br>
 
