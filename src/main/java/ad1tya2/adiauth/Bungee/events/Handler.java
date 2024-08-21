@@ -38,7 +38,7 @@ public class Handler implements Listener {
                                  ProxiedPlayer player = ProxyServer.getInstance().getPlayer(conn.getName());
                                  if(player != null && player.isConnected()){
                                      conn.disconnect(tools.getColoured(
-                                             "&eAnother player with that name is already online!"
+                                             "&cAlgum jogador com este mesmo nick está online!"
                                      ));
                                      event.setCancelled(true);
                                      return;
@@ -51,7 +51,7 @@ public class Handler implements Listener {
                                  }
                                  if(!optional.isPresent()){
                                      conn.disconnect(tools.getColoured(
-                                             "&cConnection has been cancelled due to internal server error."
+                                             "§cA conexão foi cancelada devido a um erro interno. Contacte o suporte."
                                      ));
                                      event.setCancelled(true);
                                      return;
@@ -96,6 +96,7 @@ public class Handler implements Listener {
             profile.loginProcessCompleted();
             if(profile.isPremium()) {
                 profile.fullJoined = true;
+                event.getPlayer().sendMessage("§aVocê foi autenticado com sucesso.");
             }
             storage.updatePlayer(profile);
     }
